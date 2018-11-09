@@ -2,22 +2,19 @@
 This is an attempt at solving the Google Code Jam Problem C located at
 https://code.google.com/codejam/contest/90101/dashboard#s=p2
  */
+const fs = require('fs')
 
-const SAMPLE_INPUT = [
-  '3',
-  'elcomew elcome to code jam',
-  'wweellccoommee to code qps jam',
-  'welcome to codejam'
-]
+const INPUTFILE = 'input.txt'
+const OUTPUTFILE = 'output.txt'
 
 function getInput() {
-  // TODO: Add I/O support to get the real input
-  return SAMPLE_INPUT
+  const input = fs.readFileSync(`${__dirname}/${INPUTFILE}`, 'utf8')
+  const lines = input.trim().split('\n')
+  return lines
 }
 
 function createOutput(output) {
-  // TODO: Add I/O support to output in the correct manner
-  console.log(output)
+  fs.writeFileSync(`${__dirname}/${OUTPUTFILE}`, output.join('\n'))
 }
 
 function run() {
