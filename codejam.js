@@ -29,7 +29,8 @@ function executeSolution(input) {
   for (let i = 1; i <= testCaseCount; i++) {
     const testCase = input[i]
     const count = findMatches(testCase)
-    output.push(`Case #${i}: ${count}`)
+    const formattedCount = formatCount(count)
+    output.push(`Case #${i}: ${formattedCount}`)
   }
   return output
 }
@@ -53,6 +54,19 @@ function findMatches(testCase) {
     }
   }
   return count
+}
+
+function formatCount(count) {
+  const smallCount = count % 10000
+  if (smallCount < 10) {
+    return `000${smallCount}`
+  } else if (smallCount < 100) {
+    return `00${smallCount}`
+  } else if (smallCount < 1000) {
+    return `0${smallCount}`
+  } else {
+    return smallCount
+  }
 }
 
 run()
