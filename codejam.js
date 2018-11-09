@@ -27,7 +27,18 @@ function run() {
 }
 
 function executeSolution(input) {
-  return input
+  const output = []
+  const testCaseCount = input[0] || 0
+  for (let i = 1; i <= testCaseCount; i++) {
+    const testCase = input[i]
+    const count = findMatches(testCase)
+    output.push(`Case #${i}: ${count}`)
+  }
+  return output
+}
+
+function findMatches(testCase) {
+  // TODO: Here is where the real solution will go
 }
 
 run()
