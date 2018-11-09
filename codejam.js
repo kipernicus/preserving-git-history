@@ -26,4 +26,8 @@ function run() {
   return createOutput(output)
 }
 
+function executeSolution(input) {
+  return input
+}
+
 run()
