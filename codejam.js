@@ -4,11 +4,11 @@ https://code.google.com/codejam/contest/90101/dashboard#s=p2
  */
 const fs = require('fs')
 
-const INPUTFILE = 'input.txt'
 const OUTPUTFILE = 'output.txt'
 
 function getInput() {
-  const input = fs.readFileSync(`${__dirname}/${INPUTFILE}`, 'utf8')
+  const filename = process.argv[2]
+  const input = fs.readFileSync(`${__dirname}/${filename}`, 'utf8')
   const lines = input.trim().split('\n')
   return lines
 }
