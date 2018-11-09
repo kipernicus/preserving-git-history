@@ -38,7 +38,24 @@ function executeSolution(input) {
 }
 
 function findMatches(testCase) {
-  // TODO: Here is where the real solution will go
+  const match = 'welcome to code jam'
+  const potentialSolutions = ['']
+  let count = 0
+  for (let i = 0; i < testCase.length; i++) {
+    const char = testCase[i]
+    for (let j = 0; j < potentialSolutions.length; j++) {
+      const partial = potentialSolutions[j] + char
+      if(match.startsWith((partial))) {
+        potentialSolutions.push(partial)
+      }
+    }
+  }
+  for (let i = 0; i < potentialSolutions.length; i++) {
+    if (potentialSolutions[i] === match) {
+      count++
+    }
+  }
+  return count
 }
 
 run()
