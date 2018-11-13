@@ -26,7 +26,7 @@ Clone this repository using the following command:
 
 `git show <commit-hash>`
 
-Commit changes:
+#### Commit changes:
 
 `git commit`
 
